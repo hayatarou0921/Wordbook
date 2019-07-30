@@ -12,9 +12,9 @@ html
       =link_to 'WordBook', root_path, class:'navbar-brand h1'
       ul
         li.nav-item
-          a.nav-link href='#' HOME
+          =link_to 'Home', root_path
         li.nav-item
-          a.nav-link href='#' ABOUT
+          =link_to 'About', about_path
         li.nav-item
-          a.nav-link href='#' LOGIN
+          =link_to 'Login', '#'
     = yield
