@@ -8,4 +8,13 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
+    nav.navbar.fixed-top
+      =link_to 'WordBook', root_path, class:'navbar-brand h1'
+      ul
+        li.nav-item
+          a.nav-link href='#' HOME
+        li.nav-item
+          a.nav-link href='#' ABOUT
+        li.nav-item
+          a.nav-link href='#' LOGIN
     = yield
