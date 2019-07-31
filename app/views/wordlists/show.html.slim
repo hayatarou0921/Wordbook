@@ -1,4 +1,6 @@
+=render 'shared/messages'
 .wordlists
   .container
     h1
-      =@wordlist.name
+      =@wordlist.title
+    =link_to '単語帳一覧へ', wordlists_path

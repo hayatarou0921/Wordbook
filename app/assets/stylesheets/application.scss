@@ -1,6 +1,7 @@
 @import 'bootstrap';
 @import '/*';
 
+// header
 nav {
   background: none;
   .navbar-brand {
@@ -28,7 +29,11 @@ nav {
     }
   }
 }
-// -------- 共通背景 --------
+// common
+.messages {
+  margin-top: 65px;
+  text-align: center;
+}
 .top {
 
   font-family: 'Quicksand', sans-serif;
@@ -56,3 +61,4 @@ nav {
     } 
   }
 }
+

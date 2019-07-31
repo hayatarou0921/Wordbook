@@ -36,8 +36,6 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'bootstrap'
 gem 'devise'
-gem 'omniauth-twitter'
-gem 'omniauth-google-oauth2'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
