@@ -48,6 +48,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'spring-commands-rspec'
   gem 'pry-byebug'
+  gem 'faker'
+  gem 'rails-controller-testing'
 end
 
 group :development do
