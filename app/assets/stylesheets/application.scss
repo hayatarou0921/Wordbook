@@ -28,3 +28,31 @@ nav {
     }
   }
 }
+// -------- 共通背景 --------
+.top {
+
+  font-family: 'Quicksand', sans-serif;
+
+  .jumbotron {
+  background-image: url('notebook123.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+
+    &:before {
+      content: '';
+      background-color: rgba(0,0,0,.3);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .container {
+      max-width: 1200px;
+      height: 100%;
+    } 
+  }
+}
