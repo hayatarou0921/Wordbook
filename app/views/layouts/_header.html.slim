@@ -1,0 +1,14 @@
+nav.navbar.fixed-top
+      =link_to 'WordBook', root_path, class:'navbar-brand h1'
+      ul
+        li.nav-item
+          =link_to 'Home', root_path
+        li.nav-item
+          =link_to 'About', about_path
+        li.nav-item
+          =link_to 'Login', new_user_registration_path
+        -if current_user
+          li.nav-item
+            =link_to '単語帳へ', wordlists_path
+          li.nav-item
+            =link_to 'Logout', destroy_user_session_path, method: :delete
