@@ -1,0 +1,12 @@
+.wordlists
+  .container
+    h1 単語帳一覧
+    .list.col-12
+      - @wordlists.each.with_index(1) do |wordlist, index|
+          .wordlist.col-5 id="wordlist-#{index}"
+            =link_to wordlist.name, wordlist_path(wordlist), class:'name'
+            =link_to '名前を変更', edit_wordlist_path(wordlist)
+            =link_to '削除', wordlist_path(wordlist),method: :delete, \
+                 data: { confirm: "単語帳#{wordlist.name}を削除しますか？" }
+
+    =link_to '単語帳を作る', new_wordlist_path
