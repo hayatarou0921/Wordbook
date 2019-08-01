@@ -3,10 +3,6 @@ class WordlistsController < ApplicationController
     @wordlists = Wordlist.order(:created_at)
   end
 
-  def show
-    @wordlist = Wordlist.find(params[:id])
-  end
-
   def new
     @wordlist = Wordlist.new
   end

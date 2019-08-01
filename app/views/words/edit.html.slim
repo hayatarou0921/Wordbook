@@ -1,0 +1,18 @@
+=render 'shared/messages'
+.wordlists
+  .container
+    =form_with model:@word, url: {:action=>"update", :controller=>"words"}, local: true do |f|
+      .form-group
+        =f.label :word
+        =f.text_field :word
+      .form-group
+        =f.label :parts_of_speech
+        =f.text_field :parts_of_speech
+      .form-group
+        =f.label :meaning
+        =f.text_field :meaning
+      .form-group
+        =f.label :example
+        =f.text_field :example
+      .form-group
+        =f.submit
