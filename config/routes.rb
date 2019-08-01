@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :wordlists, shallow: true do
+    resources :words
+  end
   
-  resources :wordlists
   devise_for :users
 
   root 'static_pages#home'

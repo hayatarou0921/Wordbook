@@ -1,0 +1,11 @@
+=render 'shared/messages'
+.wordlists
+  .container
+    -@words.each do |word|
+      =link_to word.word, edit_word_path(word.id)
+      =word.parts_of_speech
+      =word.meaning
+      =word.example
+      =link_to '削除', word_path(word.id), method: :delete, data: { confirm: "「#{word.word}」を削除しますか？" }
+
+    =link_to '単語を追加する', new_wordlist_word_path(@wordlist)
