@@ -2,4 +2,7 @@
 .wordlists
   .container
     h1 単語帳の新規作成
+    -if @wordlist.errors.any?
+      -@wordlist.errors.messages.each do |message, value|
+        =value
     =render 'form', wordlist: @wordlist

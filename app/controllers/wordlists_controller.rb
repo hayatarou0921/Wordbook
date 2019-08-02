@@ -1,4 +1,5 @@
 class WordlistsController < ApplicationController
+  
   def index
     @wordlists = Wordlist.order(:created_at)
   end
@@ -12,6 +13,8 @@ class WordlistsController < ApplicationController
     @wordlist.user_id = current_user.id
     if @wordlist.save
       redirect_to wordlists_path, notice: "単語帳「#{@wordlist.title}」を作成しました。"
+    else
+      render :new
     end
   end
 
