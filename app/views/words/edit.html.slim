@@ -1,18 +1,11 @@
-=render 'shared/messages'
-.wordlists
+.common
+  =render 'shared/messages'
   .container
-    =form_with model:@word, url: {:action=>"update", :controller=>"words"}, local: true do |f|
-      .form-group
-        =f.label :word
-        =f.text_field :word
-      .form-group
-        =f.label :parts_of_speech
-        =f.text_field :parts_of_speech
-      .form-group
-        =f.label :meaning
-        =f.text_field :meaning
-      .form-group
-        =f.label :example
-        =f.text_field :example
-      .form-group
-        =f.submit
+    h1.add-word 単語の編集
+    .form-wrap.col-7.mx-auto
+      =render 'word_form', word: @word, url: {:action=>"update", :controller=>"words"}
+      =link_to  word_path(@word), method: :delete,\
+                        data: { confirm: 'この単語を削除しますか？' },\
+                        class:'d-block far trash-alt' do
+        span 削除  
+        = icon 'far', 'trash-alt'

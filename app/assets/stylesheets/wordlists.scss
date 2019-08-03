@@ -1,23 +1,42 @@
 // Place all the styles related to the Wordlists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.wordlists {
-  margin-top: 60px;
+@import "variables";
+
+.common {
+  margin-top: 90px;
+
+  .wl-heading {
+    color: $color-gray;
+  }
 
   .list {
-    // display: flex;
-    // justify-content: space-around;
-
     .wordlist {
       border: 1px solid gray;
-      border-radius: 15px;
+      border-radius: 5px;
       list-style: none;
       display: inline-block;
-      width: 45%;
       height: 70px;
       margin: 15px 25px;
       align-items: center;
-      .name {
+      .title {
+        font-size: 1.3em;
+        text-align: center;
+        padding: 19px 0;
+      }
+      ul {
+        margin: 0;
+        padding: 10px 0;
+        float: right;
+        text-align: right;
+        vertical-align: middle;
+      }
+      li {
+        list-style: none;
+      }
+      
+      a {
+        color: $color-gray;
       }
     }
   }

@@ -1,7 +1,7 @@
 class WordsController < ApplicationController
   def index
     @words = Wordlist.find(params[:wordlist_id]).words.order(:created_at)
-    @wordlist = params[:wordlist_id]
+    @wordlist = Wordlist.find(params[:wordlist_id])
   end
 
   def new
@@ -13,6 +13,8 @@ class WordsController < ApplicationController
     @word.wordlist_id = params[:wordlist_id]
     if @word.save
       redirect_to wordlist_words_path(params[:wordlist_id]), notice: "「#{@word.word}」を追加しました。"
+    else
+      render :new
     end
   end
 
@@ -26,6 +28,8 @@ class WordsController < ApplicationController
     @wordlist_id = @word.wordlist_id
     if @word.save
       redirect_to wordlist_words_path(@wordlist_id), notice: "「#{@word.word}」を更新しました。"
+    else
+      render :edit
     end
   end
 
@@ -33,7 +37,7 @@ class WordsController < ApplicationController
     @word = Word.find(params[:id])
     @wordlist_id = @word.wordlist_id
     if @word.destroy
-      redirect_to wordlist_words_path(@wordlist_id), notice: "「#{@word.word}削除しました。"
+      redirect_to wordlist_words_path(@wordlist_id), notice: "「#{@word.word}」を削除しました。"
     end
   end
 

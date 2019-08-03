@@ -1,11 +1,24 @@
-=render 'shared/messages'
-.wordlists
-  .container
-    -@words.each do |word|
-      =link_to word.word, edit_word_path(word.id)
-      =word.parts_of_speech
-      =word.meaning
-      =word.example
-      =link_to '削除', word_path(word.id), method: :delete, data: { confirm: "「#{word.word}」を削除しますか？" }
+.common
+  =render 'shared/messages'
+  .container.word-heading
+    h1.text-center
+      =@wordlist.title
+    .heading
+      .d-inline-block.col-3
+        p.text-center 単語
+      .d-inline-block.col-3
+        p.text-center 意味
+      .d-inline-block.col-6
+        p.text-center 例文
+    .list
+      -@words.each do |word|
+        .words
+          =link_to word.word + "(#{desplay_initial(word.parts_of_speech)})" , \
+                edit_word_path(word.id), class: 'word d-inline-block col-3'
+          .d-inline-block.word.col-3
+            = word.meaning
+          .d-inline-block.word.col-6
+            = word.example
+    =link_to '単語を追加する', new_wordlist_word_path(@wordlist), class:'d-block mx-auto col-4 btn add'
+    =link_to '単語帳一覧へ', wordlists_path(@wordlist), class:'d-block col-2 btn back ml-auto'
 
-    =link_to '単語を追加する', new_wordlist_word_path(@wordlist)
