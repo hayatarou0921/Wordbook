@@ -7,6 +7,21 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    attributes:
+      wordlist:
+        title: 'タイトル'
+      word:
+        word: '単語'
+        parts_of_speech: '品詞'
+        noun: '名詞'
+        verb: '動詞'
+        adjective: '形容詞'
+        adverb: '副詞'
+        preposition: '前置詞'
+        conjunction: '接続詞'
+        interjection: '感動詞'
+        meaning: '意味'
+        example: '例文'
   date:
     abbr_day_names:
     - 日

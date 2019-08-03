@@ -1,3 +1,85 @@
-// Place all the styles related to the words controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+// index
+
+.word-heading {
+  color: #585858;
+}
+.heading {
+  border: 2px solid #919090;
+  border-radius: 5px;
+  background-color: #aaa;
+  color: #fafafe;
+  font-size: 1.1em;
+ p {
+    margin: auto 0;
+  }
+}
+
+.words {
+  width: 100%;
+  text-align: center;
+  background: $color-background;
+  margin: 5px auto;
+  text-align: center;
+  border:solid 2px $color-border;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 1.1em;
+  color: $color-gray;
+  .word {
+    vertical-align: middle;
+    word-wrap: break-word;
+  }
+  
+  a {
+    color: $color-gray;
+    
+  }
+}
+.add {
+  border: 2px solid #919090;
+  background-color: #aaaaaa;
+  color: #fefefe;
+  margin-top: 40px;
+
+  &:hover {
+    color: #fefefe;
+    background-color: #8d8d8d;
+  }
+}
+.back {
+  border: 2px solid $color-border;
+  margin: 30px 0;
+  &:hover {
+    color: $color-background;
+    background-color: rgb(172, 168, 168);
+  }
+}
+.form-group {
+  text-align: center;
+  input, textarea {
+    margin: 0 auto;
+  }
+}
+
+// form 
+.add-word {
+  color: $color-gray;
+  text-align: center;
+}
+.form-wrap {
+  padding: 15px;
+  border: 2px solid $color-gray;
+  border-radius: 13px;
+  background-color: $color-background;
+  font-size: 1.2em;
+  a {
+    text-align: center;
+    text-decoration: none;
+    color: $color-gray;
+  }
+}
+.btn-original {
+
+}

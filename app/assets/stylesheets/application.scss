@@ -1,34 +1,72 @@
 @import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 @import '/*';
-
 // header
-nav {
-  background: none;
-  .navbar-brand {
-    color: #fafafa;
-    text-decoration: none;
-  }
-
-  .h1 {
-    font-size: 2em;
-    color: #fafafa
-  }
-
-  ul li {
-    display: inline-block;
-
-    a {
+.home-header{
+  nav {
+    background: none;
+    .navbar-brand {
       color: #fafafa;
-      font-size: 1.5em;
-    margin-right: 30px;
-      &:hover {
+      font-size: 1.6em;
+      text-decoration: none;
+  }
+  ul {
+    margin: 0;
+    height: 40px;
+    display: flex;
+    vertical-align: middle;
+    li {
+      display: inline-block;
+      margin: auto auto;
+      a {
         color: #fafafa;
-        text-decoration: underline;
+        font-size: 1.2em;
+        margin-right: 30px;
 
+        &:hover {
+          color: #fafafa;
+          text-decoration: underline;
+
+       }
       }
     }
   }
 }
+}
+.main-header {
+  nav {
+    background-color: #aaaaaa;
+    .navbar-brand {
+    color: #fafafa;
+    font-size: 1.6em;
+    text-decoration: none;
+  }
+
+  ul {
+    margin: 0;
+    height: 40px;
+    display: flex;
+    vertical-align: middle;
+    li {
+      display: inline-block;
+      margin: auto auto;
+      a {
+        color: #fafafa;
+        font-size: 1.2em;
+        margin-right: 30px;
+
+        &:hover {
+          color: #fafafa;
+          text-decoration: underline;
+
+       }
+      }
+    }
+  }
+}
+}
+
 // common
 .messages {
   margin-top: 65px;

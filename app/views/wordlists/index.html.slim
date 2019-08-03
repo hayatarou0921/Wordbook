@@ -1,13 +1,15 @@
-=render 'shared/messages'
-.wordlists
+.common
+  =render 'shared/messages'
   .container
-    h1 単語帳一覧
+    h1.wl-heading.text-center 単語帳一覧
     .list.col-12
       - @wordlists.each.with_index(1) do |wordlist, index|
           .wordlist.col-5 id="wordlist-#{index}"
-            =link_to wordlist.title, wordlist_words_path(wordlist.id), class:'title'
-            =link_to '名前を変更', edit_wordlist_path(wordlist)
-            =link_to '削除', wordlist_path(wordlist),method: :delete, \
+            div.title.d-inline-block.col-9
+              =link_to wordlist.title, wordlist_words_path(wordlist.id)
+            ul.d-inline-block.col-3
+              li=link_to '名前を変更', edit_wordlist_path(wordlist)
+              li=link_to '削除', wordlist_path(wordlist),method: :delete, \
                  data: { confirm: "単語帳#{wordlist.title}を削除しますか？" }
 
-    =link_to '単語帳を作る', new_wordlist_path
+    =link_to '単語帳を作る', new_wordlist_path, class: 'btn add d-block col-3 mx-auto'

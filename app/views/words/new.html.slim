@@ -1,18 +1,6 @@
-=render 'shared/messages'
-.wordlists
+.common
+  =render 'shared/messages'
   .container
-    =form_with model:@word, url: {:action=>"create", :controller=>"words"}, local:true do |f|
-      .form-group
-        =f.label :word
-        =f.text_field :word
-      .form-group
-        =f.label :parts_of_speech
-        =f.text_field :parts_of_speech
-      .form-group
-        =f.label :meaning
-        =f.text_field :meaning
-      .form-group
-        =f.label :example
-        =f.text_field :example
-      .form-group
-        =f.submit
+    h1.add-word 単語の追加
+    .form-wrap.col-7.mx-auto
+      =render 'word_form', word: @word, url: {:action=>"create", :controller=>"words"}
