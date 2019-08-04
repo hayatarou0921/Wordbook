@@ -100,3 +100,41 @@
   }
 }
 
+// -- pagination -- //
+.all{
+  text-align: center;
+  margin: 0 auto; 
+  // width: 100%;
+  height: 44px;
+  margin-top: 30px;
+}
+.pagination{
+  
+  li {
+    .page-link{
+      border: none;
+      color: $color-gray; 
+      text-align: center;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      margin: 2px;
+      padding: 0;
+      background: none;
+      
+      &:hover {
+        border-radius: 20px; 
+        background-color: rgb(219, 215, 215);
+        color: #fafafa;
+      }
+    }
+  } 
+  .active {
+    a.page-link {
+      background-color: #aaa;   
+      border-radius: 20px;    
+    }
+    
+  }
+  
+}

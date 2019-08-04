@@ -19,6 +19,7 @@
             = word.meaning
           .d-inline-block.word.col-6
             = word.example
+      =paginate @words
     =link_to '単語を追加する', new_wordlist_word_path(@wordlist), class:'d-block mx-auto col-4 btn add'
     =link_to '単語帳一覧へ', wordlists_path(@wordlist), class:'d-block col-2 btn back ml-auto'
 

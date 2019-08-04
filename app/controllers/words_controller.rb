@@ -1,6 +1,6 @@
 class WordsController < ApplicationController
   def index
-    @words = Wordlist.find(params[:wordlist_id]).words.order(:created_at)
+    @words = Wordlist.find(params[:wordlist_id]).words.order(:created_at).page(params[:page]).per(5)
     @wordlist = Wordlist.find(params[:wordlist_id])
   end
 
