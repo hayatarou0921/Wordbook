@@ -42,6 +42,7 @@ gem 'font-awesome-sass'
 gem 'webdrivers'
 gem 'kaminari'
 gem 'ransack'
+gem 'jquery-rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

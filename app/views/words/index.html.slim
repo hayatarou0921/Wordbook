@@ -8,6 +8,8 @@
         =f.label :word_cont, '単語検索　'
         =f.search_field :word_cont, class:'d-inline'
         =f.submit '検索', class: 'add mt-0 mb-3'
+    =label_tag :hide, '意味を隠す'
+    =check_box_tag :hide, value = '1', checked = false, id:'hide-meaning', onchange:"hideMeaning()"
     .heading
       .d-inline-block.col-3
         p.text-center 単語
@@ -21,7 +23,7 @@
           =link_to word.word + "(#{desplay_initial(word.parts_of_speech)})" , \
                 edit_word_path(word.id), class: 'word d-inline-block col-3'
           .d-inline-block.word.col-3
-            = word.meaning
+            span#meaning= word.meaning
           .d-inline-block.word.col-6
             = word.example
       =paginate @words
