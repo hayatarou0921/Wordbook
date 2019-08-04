@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user){ create(:user) }
+  let!(:user){ create(:user) }
 
   context 'valid' do
     it 'is valid with email and password' do
@@ -10,7 +10,6 @@ RSpec.describe User, type: :model do
   end
 
   context 'invalid' do
-
     it 'is invalid without email' do
       invalid = build(:user, email: nil)
       expect(invalid).to be_invalid
@@ -22,7 +21,6 @@ RSpec.describe User, type: :model do
     end
 
     it 'is invalid with duplicate email' do
-      valid = user
       invalid = build(:user)
       expect(invalid).to be_invalid
     end

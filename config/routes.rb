@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :wordlists, shallow: true do
-    resources :words
+  resources :wordlists,except: [:show], shallow: true do
+    resources :words, except: [:show]
   end
   
   devise_for :users

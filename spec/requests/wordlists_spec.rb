@@ -64,38 +64,44 @@ RSpec.describe "Wordlists", type: :request do
     end
   end
 
-  xdescribe "POST #update" do
+  describe "PATCH #update" do
+      let!(:wordlist){ create(:wordlist) }
+      let(:new_title) do 
+        { title: 'Banana' }
+      end
+
     context 'parameter is valid' do
       it 'responds successful http status' do
-        post edit_wordlist_path(wordlist), params: { wordlist: attributes_for(:apple) }
+        patch wordlist_path(wordlist.id), params: { wordlist: {id: wordlist.id, title: new_title} }
         expect(response.status).to eq 302
       end
 
-      it "successfully generates a wordlist" do
+      it "successfully edits a wordlist" do
         expect do
-          post edit_wordlist_path, params: { wordlist: attributes_for(:wordlist) }
-        end.to change(Wordlist, :count).by(1)
+          patch wordlist_path(wordlist.id), params: { wordlist: {id: wordlist.id, title: new_title} }
+        end.to change(Wordlist, :count).by(0)
       end
   
-      it 'redirects to wordlists_path after creating wordlist' do
-        post edit_wordlist_path, params: { wordlist: attributes_for(:wordlist) }
+      it 'redirects to wordlists_path after editing wordlist' do
+        patch wordlist_path(wordlist.id), params: { wordlist: {id: wordlist.id, title: new_title} }
         expect(response.status).to redirect_to wordlists_path
       end
     end
+
     context 'parameter is invalid' do
       it 'responds successful http status' do
-        post edit_wordlist_path, params: { wordlist: attributes_for(:wordlist, :invalid) }
-        expect(response.status).to eq 200
+        patch wordlist_path(wordlist.id), params: { wordlist: {id: wordlist.id, title: new_title} }
+        expect(response.status).to eq 302
       end
 
-      it "doesn't generate a wordlist" do
+      it "doesn't edit a wordlist" do
         expect do
-          post edit_wordlist_path, params: { wordlist: attributes_for(:wordlist, :invalid) }
+          patch wordlist_path(wordlist.id), params: { wordlist: {id: wordlist.id, title: ''} }
         end.not_to change(Wordlist, :count)
       end
 
       it 'has error messages with invalid parameters' do
-        post edit_wordlist_path, params: { wordlist: attributes_for(:wordlist, :invalid) }
+        patch wordlist_path(wordlist.id), params: { wordlist: {id: wordlist.id, title: ''} }
         expect(response.body).to include "を入力してください"
       end
     end

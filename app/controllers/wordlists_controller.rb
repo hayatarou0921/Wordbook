@@ -27,6 +27,8 @@ class WordlistsController < ApplicationController
     @wordlist.assign_attributes(wordlist_params)
     if @wordlist.save
       redirect_to wordlists_path, notice: 'タイトルを変更しました。'
+    else
+      render :edit
     end
   end
 
