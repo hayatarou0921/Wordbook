@@ -39,6 +39,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'font-awesome-sass'
+gem 'webdrivers'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -50,6 +51,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'pry-byebug'
   gem 'faker'
+  gem 'capybara'
   gem 'rails-controller-testing'
 end
 
