@@ -56,10 +56,12 @@
     background-color: rgb(172, 168, 168);
   }
 }
-.form-group {
-  text-align: center;
-  input, textarea {
-    margin: 0 auto;
+.word-form {
+  .form-group {
+    text-align: center;
+    input, textarea {
+      margin: 0 auto;
+    }
   }
 }
 

@@ -3,6 +3,11 @@
   .container.word-heading
     h1.text-center
       =@wordlist.title
+    =search_form_for @q, url: wordlist_words_path(@wordlist.id) do |f|
+      .form-group
+        =f.label :word_cont, '単語検索　'
+        =f.search_field :word_cont, class:'d-inline'
+        =f.submit '検索', class: 'add mt-0 mb-3'
     .heading
       .d-inline-block.col-3
         p.text-center 単語

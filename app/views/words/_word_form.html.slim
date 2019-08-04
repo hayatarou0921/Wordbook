@@ -1,16 +1,17 @@
  =form_with model: word, url: url, local:true do |f|
     =render 'shared/error_messages', obj: f.object
-    .form-group
-      =f.label :word, '単語'
-      =f.text_field :word, class:'form-control col-5 mx-auto'
-    .form-group
-      =f.label :parts_of_speech
-      =f.select :parts_of_speech, ['名詞', '動詞', '形容詞', '副詞', '前置詞', '接続詞', '感動詞']
-    .form-group
-      =f.label :meaning, '意味'
-      =f.text_field :meaning, class:'form-control col-5'
-    .form-group
-      =f.label :example, '例文'
-      =f.text_area :example, class:'form-control col-7'
-    .form-group
-      =f.submit class:'btn add'
+    .word-form
+      .form-group
+        =f.label :word, '単語'
+        =f.text_field :word, class:'form-control col-5 mx-auto'
+      .form-group
+        =f.label :parts_of_speech
+        =f.select :parts_of_speech, ['名詞', '動詞', '形容詞', '副詞', '前置詞', '接続詞', '感動詞']
+      .form-group
+        =f.label :meaning, '意味'
+        =f.text_field :meaning, class:'form-control col-5'
+      .form-group
+        =f.label :example, '例文'
+        =f.text_area :example, class:'form-control col-7'
+      .form-group
+        =f.submit class:'btn add'
