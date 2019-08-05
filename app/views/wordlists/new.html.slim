@@ -1,8 +1,6 @@
 .common
   =render 'shared/messages'
   .container
-    h1 単語帳の新規作成
-    -if @wordlist.errors.any?
-      -@wordlist.errors.messages.each do |message, value|
-        =value
-    =render 'form', wordlist: @wordlist
+    h1.add-word 単語帳の新規作成
+    .form-wrap.col-7.mx-auto
+      =render 'form', wordlist: @wordlist

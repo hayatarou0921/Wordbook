@@ -1,5 +1,6 @@
 .common
   =render 'shared/messages'
   .container
-    h1 単語帳の編集
-    =render 'form', wordlist: @wordlist
+    h1.add-word 単語帳の編集
+    .form-wrap.col-7.mx-auto
+      =render 'form', wordlist: @wordlist

@@ -82,6 +82,16 @@
     color: $color-gray;
   }
 }
-.btn-original {
-
+.option-button {
+  text-align: center;
+}
+.toggle {
+  display: none;
+}
+.reset {
+  padding: 5px;
+  margin: 10px;
+}
+.hide {
+  margin-top: 15px;
 }

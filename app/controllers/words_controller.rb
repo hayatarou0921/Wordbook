@@ -12,6 +12,7 @@ class WordsController < ApplicationController
 
   def new
     @word = Word.new
+    @wordlist = Wordlist.find(params[:wordlist_id])
   end
 
   def create
@@ -26,6 +27,7 @@ class WordsController < ApplicationController
 
   def edit
     @word = Word.find(params[:id])
+    @number = @word.wordlist_id
   end
 
   def update

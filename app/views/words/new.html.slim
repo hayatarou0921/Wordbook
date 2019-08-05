@@ -4,3 +4,4 @@
     h1.add-word 単語の追加
     .form-wrap.col-7.mx-auto
       =render 'word_form', word: @word, url: {:action=>"create", :controller=>"words"}
+    =link_to '単語一覧へ', wordlist_words_path(@wordlist.id), class:'btn add d-block col-3 mx-auto'

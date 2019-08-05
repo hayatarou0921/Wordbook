@@ -16,6 +16,12 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+function toggleOption() {
+  option = document.querySelector('#search-option')
+  option.classList.toggle('toggle');
+}
+
 function hideMeaning() {
   box = document.querySelector('#hide-meaning');
   meanings = document.querySelectorAll('#meaning');
