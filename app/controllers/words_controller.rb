@@ -1,4 +1,6 @@
 class WordsController < ApplicationController
+  before_action :set_word, only: [:edit, :update, :destroy]
+  before_action :set_wordlist_id, only:[:update, :destroy]
   def index
     #wordをwordlistと紐づけるため、paramのidから取得
     @wordlist = Wordlist.find(params[:wordlist_id])
@@ -26,14 +28,11 @@ class WordsController < ApplicationController
   end
 
   def edit
-    @word = Word.find(params[:id])
     @number = @word.wordlist_id
   end
 
   def update
-    @word = Word.find(params[:id])
     @word.assign_attributes(word_params)
-    @wordlist_id = @word.wordlist_id
     if @word.save
       redirect_to wordlist_words_path(@wordlist_id), notice: "「#{@word.word}」を更新しました。"
     else
@@ -42,8 +41,6 @@ class WordsController < ApplicationController
   end
 
   def destroy
-    @word = Word.find(params[:id])
-    @wordlist_id = @word.wordlist_id
     if @word.destroy
       redirect_to wordlist_words_path(@wordlist_id), notice: "「#{@word.word}」を削除しました。"
     end
@@ -52,5 +49,13 @@ class WordsController < ApplicationController
   private
     def word_params
       params.require(:word).permit(:word, :parts_of_speech, :meaning, :example, :wordlist_id)
+    end
+
+    def set_word
+      @word = Word.find(params[:id])
+    end
+
+    def set_wordlist_id
+      @wordlist_id = @word.wordlist_id
     end
 end
