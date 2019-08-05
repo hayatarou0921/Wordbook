@@ -3,13 +3,17 @@
   .container.word-heading
     h1.text-center
       =@wordlist.title
-    =search_form_for @q, url: wordlist_words_path(@wordlist.id) do |f|
+    =search_form_for @search_q, url: wordlist_words_path(@wordlist.id) do |f|
       .form-group
         =f.label :word_cont, '単語検索　'
         =f.search_field :word_cont, class:'d-inline'
         =f.submit '検索', class: 'add mt-0 mb-3'
     =label_tag :hide, '意味を隠す'
     =check_box_tag :hide, value = '1', checked = false, id:'hide-meaning', onchange:"hideMeaning()"
+    =search_form_for @refine_q, url: wordlist_words_path(@wordlist.id) do |f|
+      =f.label :parts_of_speech_cont, '品詞'
+      =f.select :parts_of_speech_cont, [['名詞','名詞'],['動詞','動詞'],['形容詞','形容詞'],['副詞','副詞'],['前置詞','前置詞'],['接続詞','接続詞'],['感動詞','感動詞']]
+      =f.submit '絞りこむ', class: 'add mt-0 mb-3'
     .heading
       .d-inline-block.col-3
         p.text-center 単語

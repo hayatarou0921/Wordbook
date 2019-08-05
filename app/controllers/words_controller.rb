@@ -1,8 +1,13 @@
 class WordsController < ApplicationController
   def index
-    @q = Word.where(wordlist_id: params[:wordlist_id]).order(:created_at).ransack(params[:q])
-    @words = @q.result(distinct: true).page(params[:page]).per(20)
+    #wordをwordlistと紐づけるため、paramのidから取得
     @wordlist = Wordlist.find(params[:wordlist_id])
+    #検索結果から絞りこみ
+    @search_q = Word.where(wordlist_id: params[:wordlist_id]).order(:created_at).ransack(params[:q], search_key: :search_q)
+    @words = @search_q.result(distinct: true).page(params[:page]).per(20)
+    #品詞選択から絞りこみ
+    @refine_q = Word.where(wordlist_id: params[:wordlist_id]).ransack(params[:q], search_key: :refine_q)
+    @words = @refine_q.result(distinct: true).page(params[:page])
   end
 
   def new
