@@ -11,7 +11,7 @@
         li
           =link_to 'About', about_path
         li
-          =link_to 'Login', new_user_registration_path
+          =link_to 'Login', new_user_session_path
         -if current_user
           li
             =link_to '単語帳へ', wordlists_path
@@ -28,7 +28,7 @@
         li
           =link_to 'About', about_path
         li
-          =link_to 'Login', new_user_registration_path
+          =link_to 'Login', new_user_session_path
         -if current_user
           li
             =link_to '単語帳へ', wordlists_path

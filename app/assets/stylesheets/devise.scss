@@ -6,10 +6,10 @@
   top: 20%;
   margin: auto;
 
-  h2 {
+  h1 {
     color: #fafafa;
     text-align: center;
-    font-size: 6em;
+    font-size: 4em;
   }
   label {
     font-size: 1.3em;
@@ -22,5 +22,33 @@
     width: 80%;
     height: 100%;
     margin: 0 auto;
+
+    .minimum {
+      color: #f5f5f5;
+    }
+  }
+}
+.devise-add {
+  border: 2px solid #f5f5f5;
+  background-color: #f5f5f5;
+  color: $color-gray;
+  &:hover{
+    background-color: #eeebeb;
+  }
+}
+.devise-link {
+  color: #f5f5f5;
+  &:hover {
+    text-decoration: none;
+    color: #f5f5f5;
+    border-bottom: 2px solid #f5f5f5;
+  }
+}
+#error_explanation {
+  h2 {
+    font-size: 1em;
+  }
+  li {
+    list-style: none;
   }
 }
