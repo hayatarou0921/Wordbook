@@ -1,0 +1,11 @@
+nav.navbar.fixed-top
+      .brand
+        =link_to 'WordBook', root_path, class:'d-inline-block navbar-brand'
+      ul
+        -if current_user
+            li =link_to '単語帳', wordlists_path
+            li =link_to 'Logout', destroy_user_session_path, method: :delete
+        -else
+          li =link_to 'Home', root_path
+          li =link_to 'About', about_path
+          li =link_to 'Login', new_user_session_path

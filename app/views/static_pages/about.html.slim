@@ -1,2 +1,11 @@
-h1 StaticPages#about
-p Find me in app/views/static_pages/about.html.slim
+.top
+  .jumbotron
+    .container
+      .home-main
+        h1 Wordbook
+        p 単語帳をジャンルごとに分けて作成したり、
+        p 苦手な単語だけを集めて単語帳にしたり、
+        p 使い方は自由です！
+        p あなただけの単語帳を作りましょう！
+        .btn-list2
+          =link_to 'さっそく登録',new_user_registration_path , class: 'btn signup ml-3'

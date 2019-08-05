@@ -2,35 +2,7 @@
         (controller_path == 'devise/sessions' && action_name == 'new') || \
         controller_path == 'static_pages'
   .home-header
-    nav.navbar.fixed-top
-      .brand
-        =link_to 'WordBook', root_path, class:'d-inline-block navbar-brand'
-      ul
-        li
-          =link_to 'Home', root_path
-        li
-          =link_to 'About', about_path
-        li
-          =link_to 'Login', new_user_session_path
-        -if current_user
-          li
-            =link_to '単語帳へ', wordlists_path
-          li
-            =link_to 'Logout', destroy_user_session_path, method: :delete
+    =render 'layouts/navbar'
 -else 
   .main-header
-    nav.navbar.fixed-top
-      .brand
-        =link_to 'WordBook', root_path, class:'d-inline-block navbar-brand'
-      ul
-        li
-          =link_to 'Home', root_path
-        li
-          =link_to 'About', about_path
-        li
-          =link_to 'Login', new_user_session_path
-        -if current_user
-          li
-            =link_to '単語帳へ', wordlists_path
-          li
-            =link_to 'Logout', destroy_user_session_path, method: :delete
+    =render 'layouts/navbar'
