@@ -4,6 +4,10 @@
       .devise-main
         h1 
           | Log in
+        .btn.add.col-4.d-block.mx-auto
+          p テストユーザー
+          p メールアドレス: test@example.com
+          p パスワード: password
         .form
           = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
             = render "devise/shared/error_messages", resource: resource
