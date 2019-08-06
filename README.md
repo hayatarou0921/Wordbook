@@ -1,24 +1,14 @@
-# README
+# Wordbook
+### 簡単な単語帳アプリです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### 主な使用技術
+- DB PostgreSQL
+- ユーザー管理機能 Devise
+- ページネーション機能 kaminari
+- 検索・絞りこみ機能 Ransack
+- テスト RSpec
+- フロント開発　
+  - slim
+  - bootstrap
+- Ruby 2.6.3
+- Rails 5.2.3
