@@ -2,6 +2,7 @@
 簡単な単語帳アプリです。
 
 ***DEMO;***
+br
 ![demo](https://user-images.githubusercontent.com/51501611/62747745-be2a2200-ba90-11e9-9551-fbd4c1b72d17.gif)
 
 ### 主な使用技術
