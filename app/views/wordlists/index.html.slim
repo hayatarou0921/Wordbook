@@ -10,6 +10,6 @@
             ul.d-inline-block.col-3
               li=link_to '名前を変更', edit_wordlist_path(wordlist)
               li=link_to '削除', wordlist_path(wordlist),method: :delete, \
-                 data: { confirm: "単語帳#{wordlist.title}を削除しますか？" }
+                 data: { confirm: "単語帳「#{wordlist.title}」を削除しますか？" }
 
     =link_to '単語帳を作る', new_wordlist_path, class: 'btn add d-block col-3 mx-auto'
